@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #wrapper {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: 1fr;
+            grid-template-areas: 
+                "header"
+                "nav"
+                "main"
+                "aside"
+                "footer"
+                ;
+            gap: 10px;
+            max-width: 1200px;
+            height: 100vh;
+            margin: 0 auto;
+        }
+        header {
+            grid-area: header;
+            background-color: purple;
+            border-radius: 20px;
+        }
+        nav {
+            grid-area: nav;
+            background-color: magenta;
+            border-radius: 20px;
+            height: 50px;
+        }
+        main {
+            grid-area: main;
+            background-color: gold;
+            border-radius: 20px;
+            height: 100%;
+
+        }
+        aside {
+            grid-area: aside;
+            background-color: salmon;
+            border-radius: 20px;
+        }
+        footer {
+            grid-area: footer;
+            background-color: deeppink;
+            border-radius: 20px;
+        }
+        @media (min-width: 768px) {
+            #wrapper {
+            grid-template-columns: 2fr 1fr;
+            grid-template-areas: 
+                "header header"
+                "nav nav"
+                "main aside"
+                "footer footer"
+                ;
+            gap: 20px;
+        }
+        }
+        @media (min-width: 1200px) {
+            #wrapper {
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-areas: 
+                "header header header"
+                "nav main aside"
+                "footer footer footer"
+                ;
+            gap: 20px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header>...</header>
+        <nav>...</nav>
+        <main>...</main>
+        <aside>...</aside>
+        <footer>...</footer>
+</div>
+</body>
+</html>
