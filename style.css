@@ -1,11 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:root {
+    --background-color: #0f0f0f;
+    --border: #2f2f31;
+    --paragraph: #999;
+    --title: #ddd;
+    --blockquote: #1e1e20;
+}
 * {
     box-sizing: border-box;
 }
 body {
     margin: 0;
     font-family: "poppins", sans-serif;
+    background-color: var(--background-color);
 }
 ul, li {
     list-style-type: none;
@@ -19,15 +27,17 @@ ul, li {
 header {
     grid-column: span 3;
     text-align: center;
-    border-bottom: 2px solid #ddd;
+    border-bottom: 2px solid var(--border);
+    color: var(--title);
 }
 nav {
     padding: 20px;
-    border-right: 2px solid #ddd;
+    border-right: 2px solid var(--border);
+    color: var(--title);
 }
 nav a {
     text-decoration: underline;
-    color: black;
+    color: var(--title);
 }
 main {
     padding: 30px;
@@ -35,6 +45,12 @@ main {
 main h2 {
     font-size: 3.5em;
     max-width: 800px;
+    color: var(--title);
+}
+main h3 {
+    font-size: 3em;
+    max-width: 800px;
+    color: var(--title);
 }
 main img {
     width: 100%;
@@ -42,24 +58,37 @@ main img {
 main p {
     margin-top: 30px;
     line-height: 2em;
-    color: #595959;
+    color: var(--paragraph);
 }
 aside {
     padding: 30px;
-    border-left: 2px solid #ddd;
+    border-left: 2px solid var(--border);
+    color: var(--title);
+}
+blockquote {
+    background-color: var(--blockquote);
+    color: var(--title);
+    max-width: 800px;
+    border-radius: 30px;
+    padding: 10px;
+    font-weight: bold;
+    font-style: italic;
+    margin: 0 auto;
 }
 footer {
     grid-column: span 3;
     text-align: center;
-    border-top: 2px solid #ddd;
+    border-top: 2px solid var(--border);
     padding: 30px;
+    color: var(--paragraph);
 }
-/* mobile responsive layout */
+/* desktop 2 */
 @media (max-width: 1200px) {
     nav {
         grid-column: span 3;
         border-right: 0;
-        border-bottom: 2px solid #ddd;
+        border-bottom: 2px solid var(--border);
+        color: var(--title);
     }
     nav li {
         display: inline-block;
@@ -70,26 +99,32 @@ footer {
     }
     aside {
         padding: 15px;
+        color: var(--title);
     }
 }
-
+/* tablet */
 @media (max-width: 1023px) {
     nav, main, aside {
         grid-column: span 3;
+        color: var(--title);
     }
     aside {
         border-left: 0;
-        border-top: 2px solid #ddd;
+        border-top: 2px solid var(--border);
     }
     main h2 {
         font-size: 3em; 
     }
 }
+/* mobile */
 @media (max-width: 768px) {
     nav, main, aside {
         grid-column: span 3;
     }
     main h2 {
         font-size: 2.5em; 
+    }
+    aside {
+        color: var(--title);
     }
 }
